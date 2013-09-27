@@ -1,7 +1,13 @@
+/*
+ * if youre from a functional language, you probably miss map... well here it
+ * is
+ */
 import java.util.*;
 import java.lang.reflect.*;
 class Map_Ex{
 
+    // this first section are functions we will call with map
+    // note, they operate on a single object, and return a single object
     private static Integer square(Integer x){
         return x*x;
     }
@@ -12,16 +18,27 @@ class Map_Ex{
         return s.substring(1);
     }
 
+
+
+
+
+    /* this is map.  the String method is the string name of the
+     * method you want to map over your list
+     */
     @SuppressWarnings("unchecked")
     private static List map(String method, List lst){
         Method m = null;
 
         try{
-            Class<?> c = Class.forName("Map_Ex");
-            Class<?> type = lst.get(0).getClass();
 
+            Class<?> c = Class.forName("Map_Ex"); // get this class
+            Class<?> type = lst.get(0).getClass(); // get the type of our list
+
+            // find a method in this class with the appropriate method name
+            // and that takes a parameter of the type of our list
             m = c.getDeclaredMethod(method, type);
 
+            // invoke the method on all our list elements
             for(int i=0; i<lst.size(); i++){
                 Object n = lst.remove(0);
                 n = m.invoke(null, n);

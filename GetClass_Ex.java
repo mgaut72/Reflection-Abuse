@@ -7,6 +7,10 @@ public class GetClass_Ex{
 
         /*
          * Ex. 1
+         *
+         * reflection happens at runtime, so we get LinkedList
+         * note that its not a linked list of strings, because behind the
+         * scenes, a linked list is just storing objects
          */
         List<String> shapes = new LinkedList<String>();
         shapes.add("square");
@@ -20,6 +24,8 @@ public class GetClass_Ex{
 
         /*
          * Ex. 2
+         *
+         * reflection occurs at runtime, so we get Integer
          */
         Object myNum = new Integer(8);
 
@@ -31,6 +37,9 @@ public class GetClass_Ex{
 
         /*
          * Ex. 3
+         *
+         * note that since x is not an object, this will fail, because there
+         * is no associated class
          * /
         int x = 5;
         System.out.println("x has type : "
