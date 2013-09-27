@@ -12,6 +12,9 @@ with it.  Generally, reflection is useful as a last resort for unit testings and
 use in loading classes by the JVM
 
 
+[Corresponding Slides](https://docs.google.com/presentation/d/1d7lAp8k_wYZrKav20GYPSTo21lv00KAOhwUmGwg_7nc/edit#slide=id.p)
+
+
 
 usage:
 ---------
